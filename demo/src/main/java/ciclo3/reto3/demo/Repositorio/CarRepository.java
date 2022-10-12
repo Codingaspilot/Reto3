@@ -6,7 +6,7 @@
 package ciclo3.reto3.demo.Repositorio;
 
 import ciclo3.reto3.demo.Interface.CarInterface;
-import ciclo3.reto3.demo.Modelo.Carro;
+import ciclo3.reto3.demo.Modelo.Car;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
@@ -20,23 +20,23 @@ public class CarRepository {
     @Autowired
     private CarInterface extencionesCrud;
     
-    public List<Carro> getAll(){
-        return (List<Carro>) extencionesCrud.findAll();
+    public List<Car> getAll(){
+        return (List<Car>) extencionesCrud.findAll();
     }
     
-    public Optional<Carro> getTool(int id){
+    public Optional<Car> getTool(int id){
         return extencionesCrud.findById(id);
     }
     
-    public Carro save(Carro car){
+    public Car save(Car car){
         return extencionesCrud.save(car);
     }
 
-    public Optional<Carro> getCarro(int id) {
+    public Optional<Car> getCar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Carro save(Optional<Carro> car) {
+    public Car save(Optional<Car> car) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 } 

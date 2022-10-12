@@ -7,7 +7,7 @@ package ciclo3.reto3.demo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ciclo3.reto3.demo.Modelo.Carro;
+import ciclo3.reto3.demo.Modelo.Car;
 import ciclo3.reto3.demo.Servicio.CarService;
 import java.util.List;
 import java.util.Optional;
@@ -23,24 +23,24 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author lufel
  */
 @RestController
-@RequestMapping("/api/Carro")
+@RequestMapping("/api/Car")
 public class CarController {
       @Autowired
     private CarService carService;
     
     @GetMapping("/all")
-    public List<Carro> getAll(){
+    public List<Car> getAll(){
         return carService.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Carro> getCarro(@PathVariable("id") int id){
-        return carService.getCarro(id);
+    public Optional<Car> getCar(@PathVariable("id") int id){
+        return carService.getCar(id);
     } 
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Carro save (@RequestBody Carro car){
+    public Car save (@RequestBody Car car){
         return carService.save(car);
     }
 }

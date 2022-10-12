@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ciclo3.reto3.demo.Modelo.Carro;
+import ciclo3.reto3.demo.Modelo.Car;
 
 @Service
 
@@ -13,19 +13,19 @@ public class CarService {
    @Autowired
     private CarRepository carRepository;
     
-    public List<Carro> getAll(){
+    public List<Car> getAll(){
         return carRepository.getAll();
     }
     
-    public Optional<Carro> getCarro(int id){
-        return carRepository.getCarro(id);
+    public Optional<Car> getCar(int id){
+        return carRepository.getCar(id);
     }
     
-    public Carro save (Carro car){
+    public Car save (Car car){
         if (car.getId() == null){
             return carRepository.save(car);
         } else {
-            Optional<Carro> car1 = carRepository.getCarro(car.getId());
+            Optional<Car> car1 = carRepository.getCar(car.getId());
             if(car1.isEmpty()){
                 return carRepository.save(car);
             } else {

@@ -29,7 +29,7 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "carId")
     @JsonIgnoreProperties({"messages","reservations"})
-    private Carro car;
+    private Car car;
      
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -44,7 +44,7 @@ public class Message {
         return messageText;
     }
 
-    public Carro getCar() {
+    public Car getCar() {
         return car;
     }
 
@@ -60,7 +60,7 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public void setCar(Carro car) {
+    public void setCar(Car car) {
         this.car = car;
     }
 
