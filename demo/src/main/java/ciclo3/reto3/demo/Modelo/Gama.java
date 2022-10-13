@@ -24,7 +24,7 @@ import javax.persistence.Table;
 public class Gama {
  @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idGama;
     private String name;
     private String description;
 
@@ -33,11 +33,11 @@ public class Gama {
     private List<Car> car;
 
     public Integer getId() {
-        return id;
+        return idGama;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer idGama) {
+        this.id = idGama;
     }
 
     public String getName() {
@@ -56,4 +56,12 @@ public class Gama {
         this.description = description;
     }
 
+    public List<Car> getCar() {
+        return car;
+    }
+
+    public void setCar(List<Car> car) {
+        this.car = car;
+    }
+    
 }
