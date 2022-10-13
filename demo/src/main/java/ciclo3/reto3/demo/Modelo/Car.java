@@ -49,7 +49,7 @@ public class Car {
         return idCar;
     }
 
-    public void setIdCar(Integer id) {
+    public void setIdCar(Integer idCar) {
         this.idCar = idCar;
     }
 
