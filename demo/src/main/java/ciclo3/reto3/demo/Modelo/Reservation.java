@@ -31,12 +31,12 @@ public class Reservation {
      private String status = "created";
      
     @ManyToOne
-    @JoinColumn(name = "carId")
+    @JoinColumn(name = "idCar")
     @JsonIgnoreProperties("reservations")
     private Car car;
     
     @ManyToOne
-    @JoinColumn(name = "clientId")
+    @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
     
