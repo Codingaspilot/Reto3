@@ -37,7 +37,7 @@ public class Gama {
     }
 
     public void setId(Integer idGama) {
-        this.id = idGama;
+        this.idGama = idGama;
     }
 
     public String getName() {
