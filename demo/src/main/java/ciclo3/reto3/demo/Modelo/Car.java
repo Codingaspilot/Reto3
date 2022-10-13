@@ -33,7 +33,7 @@ public class Car {
     private String description;
     
     @ManyToOne
-    @JoinColumn(name = "gamaId")
+    @JoinColumn(name = "idGama")
     @JsonIgnoreProperties("car")
     private Gama gama;
     
