@@ -22,10 +22,10 @@ public class CarService {
     }
     
     public Car save (Car car){
-        if (car.getId() == null){
+        if (car.getIdCar() == null){
             return carRepository.save(car);
         } else {
-            Optional<Car> car1 = carRepository.getCar(car.getId());
+            Optional<Car> car1 = carRepository.getCar(car.getIdCar());
             if(car1.isEmpty()){
                 return carRepository.save(car);
             } else {

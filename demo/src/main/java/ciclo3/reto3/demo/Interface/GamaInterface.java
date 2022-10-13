@@ -5,4 +5,8 @@ import ciclo3.reto3.demo.Modelo.Gama;
 
 public interface GamaInterface extends CrudRepository<Gama,Integer>{
     
+    public Gama save(Gama gama);
+
+    public void delete(Gama gama);
+    
 }

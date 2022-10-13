@@ -22,10 +22,10 @@ public class GamaService {
     }
     
     public Gama save (Gama gama){
-        if (gama.getId() == null){
+        if (gama.getIdGama() == null){
             return gamaRepository.save(gama);
         } else {
-            Optional<Gama> gama1 = gamaRepository.getGama(gama.getId());
+            Optional<Gama> gama1 = gamaRepository.getGama(gama.getIdGama());
             if(gama1.isEmpty()){
                 return gamaRepository.save(gama);
             } else {

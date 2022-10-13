@@ -32,11 +32,11 @@ public class Gama {
     @JsonIgnoreProperties("gama")
     private List<Car> car;
 
-    public Integer getId() {
+    public Integer getIdGama() {
         return idGama;
     }
 
-    public void setId(Integer idGama) {
+    public void setIdGama(Integer idGama) {
         this.idGama = idGama;
     }
 

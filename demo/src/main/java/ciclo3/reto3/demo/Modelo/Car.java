@@ -45,11 +45,11 @@ public class Car {
     @JsonIgnoreProperties({"car","messages"})
     private List<Reservation> reservations;
 
-    public Integer getId() {
+    public Integer getIdCar() {
         return idCar;
     }
 
-    public void setId(Integer id) {
+    public void setIdCar(Integer id) {
         this.idCar = idCar;
     }
 
