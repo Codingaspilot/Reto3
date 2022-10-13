@@ -34,8 +34,8 @@ public class CarController {
     }
     
     @GetMapping("/{id}")
-    public Optional<Car> getCar(@PathVariable("id") int id){
-        return carService.getCar(id);
+    public Optional<Car> getCar(@PathVariable("idCar") int idCar){
+        return carService.getCar(idCar);
     } 
     
     @PostMapping("/save")
