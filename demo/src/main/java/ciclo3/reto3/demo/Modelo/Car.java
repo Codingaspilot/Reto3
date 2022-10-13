@@ -29,7 +29,7 @@ public class Car {
     private Integer idCar;
     private String name;
     private String brand;
-    private Integer year;
+    private String year;
     private String description;
     
     @ManyToOne
@@ -69,11 +69,11 @@ public class Car {
         this.brand = brand;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
