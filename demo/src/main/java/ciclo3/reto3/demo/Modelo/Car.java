@@ -33,9 +33,9 @@ public class Car {
     private String description;
     
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "gamaId")
     @JsonIgnoreProperties("cars")
-    private Category category;
+    private Gama gama;
     
      @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
     @JsonIgnoreProperties({"car","client"})
@@ -85,14 +85,6 @@ public class Car {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public List<Message> getMessages() {
         return messages;
     }
@@ -109,7 +101,13 @@ public class Car {
         this.reservations = reservations;
     }
     
-    
+    public Gama getGama() {
+        return gama;
+    }
+
+    public void setGama(Gama gama) {
+        this.gama = gama;
+    }
 
  
     

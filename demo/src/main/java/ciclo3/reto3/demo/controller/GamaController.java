@@ -8,9 +8,9 @@ package ciclo3.reto3.demo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ciclo3.reto3.demo.Servicio.CategoryService;
+import ciclo3.reto3.demo.Servicio.GamaService;
 import java.util.List;
-import ciclo3.reto3.demo.Modelo.Category;
+import ciclo3.reto3.demo.Modelo.Gama;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,25 +28,25 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author lufel
  */
 @RestController
-@RequestMapping("/api/Category")
-public class CategoryController {
+@RequestMapping("/api/Gama")
+public class GamaController {
          @Autowired
-    private CategoryService categoryService;
+    private GamaService gamaService;
     
     @GetMapping("/all")
-    public List<Category> getAll(){
-        return categoryService.getAll();
+    public List<Gama> getAll(){
+        return gamaService.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Category> getCategory(@PathVariable("id") int id){
-        return categoryService.getCategory(id);
+    public Optional<Gama> getGama(@PathVariable("id") int id){
+        return gamaService.getGama(id);
     } 
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category save (@RequestBody Category category){
-        return categoryService.save(category);
+    public Gama save (@RequestBody Gama gama){
+        return gamaService.save(gama);
     }
     
 }

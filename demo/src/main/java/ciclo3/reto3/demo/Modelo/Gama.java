@@ -20,16 +20,16 @@ import javax.persistence.Table;
  * @author lufel
  */
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "gama")
+public class Gama {
  @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-    @JsonIgnoreProperties("category")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "gama")
+    @JsonIgnoreProperties("gama")
     private List<Car> car;
 
     public Integer getId() {

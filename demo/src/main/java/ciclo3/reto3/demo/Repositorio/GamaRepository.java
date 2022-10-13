@@ -1,10 +1,10 @@
 package ciclo3.reto3.demo.Repositorio;
 
-import ciclo3.reto3.demo.Interface.CategoryInterface;
+import ciclo3.reto3.demo.Interface.GamaInterface;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ciclo3.reto3.demo.Modelo.Category;
+import ciclo3.reto3.demo.Modelo.Gama;
 import java.util.Optional;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,20 +19,20 @@ import java.util.Optional;
 
 @Repository
 
-public class CategoryRepository {
+public class GamaRepository {
  @Autowired
-    private CategoryInterface extencionesCrud;
+    private GamaInterface extencionesCrud;
     
-    public List<Category> getAll(){
-        return (List<Category>) extencionesCrud.findAll();
+    public List<Gama> getAll(){
+        return (List<Gama>) extencionesCrud.findAll();
     }
     
-    public Optional<Category> getCategory(int id){
+    public Optional<Gama> getGama(int id){
         return extencionesCrud.findById(id);
     }
     
-    public Category save(Category category){
-        return extencionesCrud.save(category);
+    public Gama save(Gama gama){
+        return extencionesCrud.save(gama);
     }
     
     
