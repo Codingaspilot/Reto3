@@ -28,12 +28,12 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name = "carId")
-    @JsonIgnoreProperties({"message","reservation"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Car car;
      
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({"message","reservation"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
     public Integer getIdMessage() {
