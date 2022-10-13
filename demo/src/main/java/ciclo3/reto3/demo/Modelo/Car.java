@@ -39,11 +39,11 @@ public class Car {
     
      @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
     @JsonIgnoreProperties({"car","client"})
-    private List<Message> messages;
+    private List<Message> message;
      
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
-    @JsonIgnoreProperties({"car","messages"})
-    private List<Reservation> reservations;
+    @JsonIgnoreProperties({"car","message"})
+    private List<Reservation> reservation;
 
     public Integer getIdCar() {
         return idCar;
@@ -85,20 +85,20 @@ public class Car {
         this.description = description;
     }
 
-    public List<Message> getMessages() {
-        return messages;
+    public List<Message> getMessage() {
+        return message;
     }
 
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
+    public void setMessages(List<Message> message) {
+        this.message = message;
     }
 
-    public List<Reservation> getReservations() {
-        return reservations;
+    public List<Reservation> getReservation() {
+        return reservation;
     }
 
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
     }
     
     public Gama getGama() {

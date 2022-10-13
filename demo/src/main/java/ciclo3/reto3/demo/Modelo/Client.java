@@ -34,11 +34,11 @@ public class Client {
 
    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
-    private List<Message> messages;
+    private List<Message> message;
    
    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
-    private List<Reservation> reservations;
+    private List<Reservation> reservation;
 
     public Integer getIdClient() {
         return idClient;
@@ -80,20 +80,20 @@ public class Client {
         this.age = age;
     }
 
-    public List<Message> getMessages() {
-       return messages;
+    public List<Message> getMessage() {
+       return message;
     }
 
-    public void setMessages(List<Message> messages) {
-       this.messages = messages;
+    public void setMessage(List<Message> message) {
+       this.message = message;
     }
 
-    public List<Reservation> getReservations() {
-        return reservations;
+    public List<Reservation> getReservation() {
+        return reservation;
     }
 
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
     }
    
    

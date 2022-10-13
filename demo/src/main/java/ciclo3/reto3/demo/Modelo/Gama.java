@@ -56,11 +56,11 @@ public class Gama {
         this.description = description;
     }
 
-    public List<Car> getCar() {
+    public List<Car> getCars() {
         return car;
     }
 
-    public void setCar(List<Car> car) {
+    public void setCars(List<Car> car) {
         this.car = car;
     }
 
