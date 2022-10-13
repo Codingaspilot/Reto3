@@ -24,20 +24,12 @@ public class CarRepository {
         return (List<Car>) extencionesCrud.findAll();
     }
     
-    public Optional<Car> getTool(int id){
-        return extencionesCrud.findById(id);
+    public Optional<Car> getCar(int idCar){
+        return extencionesCrud.findById(idCar);
     }
     
     public Car save(Car car){
         return extencionesCrud.save(car);
     }
 
-    public Optional<Car> getCar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Car save(Optional<Car> car) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-} 
-
+}
