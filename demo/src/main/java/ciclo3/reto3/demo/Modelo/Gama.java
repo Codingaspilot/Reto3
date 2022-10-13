@@ -30,7 +30,7 @@ public class Gama {
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "gama")
     @JsonIgnoreProperties("gama")
-    private List<Car> cars;
+    private List<Car> car;
 
     public Integer getIdGama() {
         return idGama;
