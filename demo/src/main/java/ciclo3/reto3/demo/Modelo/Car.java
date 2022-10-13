@@ -34,7 +34,7 @@ public class Car {
     
     @ManyToOne
     @JoinColumn(name = "gamaId")
-    @JsonIgnoreProperties("cars")
+    @JsonIgnoreProperties("car")
     private Gama gama;
     
      @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
