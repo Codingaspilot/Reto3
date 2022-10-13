@@ -26,7 +26,7 @@ import javax.persistence.Table;
 public class Car {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idCar;
     private String name;
     private String brand;
     private Integer year;
@@ -46,11 +46,11 @@ public class Car {
     private List<Reservation> reservations;
 
     public Integer getId() {
-        return id;
+        return idCar;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idCar = idCar;
     }
 
     public String getName() {
