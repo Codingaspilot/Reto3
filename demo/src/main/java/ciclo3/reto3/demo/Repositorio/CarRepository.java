@@ -9,12 +9,9 @@ import ciclo3.reto3.demo.Interface.CarInterface;
 import ciclo3.reto3.demo.Modelo.Car;
 import org.springframework.stereotype.Repository;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 /**
  *
@@ -27,12 +24,8 @@ public class CarRepository {
     
 
    
-    public List<Car> getAll() {
-        var list = (List<Car>) extencionesCrud.findAll();
-        var _list = list.stream().peek(entry -> {
-           entry.getGama().setCars(null);
-        }).collect(Collectors.toList());
-        return _list;
+    public List<Car> getAll(){
+        return (List<Car>) extencionesCrud.findAll();
     }
     
     public Optional<Car> getCar(int idCar){
