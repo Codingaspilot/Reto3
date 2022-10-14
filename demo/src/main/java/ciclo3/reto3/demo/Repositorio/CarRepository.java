@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 /**
  *
@@ -23,12 +25,14 @@ public class CarRepository {
     @Autowired
     private CarInterface extencionesCrud;
     
+
+   
     public List<Car> getAll() {
         var list = (List<Car>) extencionesCrud.findAll();
-        list.forEach((p)-> {
-            p.getGama().setCars(null);    
-        });
-        return list;
+        var _list = list.stream().peek(entry -> {
+           entry.getGama().setCars(null);
+        }).collect(Collectors.toList());
+        return _list;
     }
     
     public Optional<Car> getCar(int idCar){
