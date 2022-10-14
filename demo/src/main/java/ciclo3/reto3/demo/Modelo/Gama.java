@@ -7,6 +7,8 @@ package ciclo3.reto3.demo.Modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
+import java.util.Optional;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +32,7 @@ public class Gama {
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "gama")
     @JsonIgnoreProperties("gama")
-    private List<Car> cars;
+    private Optional<List<Car>> cars;
 
     public Integer getIdGama() {
         return idGama;
@@ -56,11 +58,11 @@ public class Gama {
         this.description = description;
     }
 
-    public List<Car> getCars() {
+    public Optional<List<Car>> getCars() {
         return cars;
     }
 
-    public void setCars(List<Car> cars) {
+    public void setCars(Optional<List<Car>> cars) {
         this.cars = cars;
     }
 

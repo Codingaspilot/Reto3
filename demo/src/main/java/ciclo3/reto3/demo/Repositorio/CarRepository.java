@@ -8,6 +8,9 @@ package ciclo3.reto3.demo.Repositorio;
 import ciclo3.reto3.demo.Interface.CarInterface;
 import ciclo3.reto3.demo.Modelo.Car;
 import org.springframework.stereotype.Repository;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +23,12 @@ public class CarRepository {
     @Autowired
     private CarInterface extencionesCrud;
     
-    public List<Car> getAll(){
-        return (List<Car>) extencionesCrud.findAll();
+    public List<Car> getAll() {
+        var list = (List<Car>) extencionesCrud.findAll();
+        list.forEach((p)-> {
+            p.getGama().setCars(null);    
+        });
+        return list;
     }
     
     public Optional<Car> getCar(int idCar){
