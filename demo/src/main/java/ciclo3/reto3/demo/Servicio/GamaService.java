@@ -33,4 +33,14 @@ public class GamaService {
             }
         }
     }
+    public boolean deleteGama (int id){
+        Boolean d = getGama(id).map(gama -> {
+            gamaRepository.delete(gama);
+            return true;
+
+        }).orElse(false);
+        return d;
+
+
+    }
 }

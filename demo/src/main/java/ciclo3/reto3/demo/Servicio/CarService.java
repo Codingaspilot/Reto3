@@ -33,4 +33,12 @@ public class CarService {
             }
         }
     }
+    public boolean deleteCar (int id){
+        Boolean d = getCar(id).map(car -> {
+            carRepository.delete(car);
+            return true;
+
+        }).orElse(false);
+        return d;
+}
 }
