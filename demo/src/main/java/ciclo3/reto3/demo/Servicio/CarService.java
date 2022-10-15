@@ -33,6 +33,38 @@ public class CarService {
             }
         }
     }
+
+    public Car update(Car car){
+        if(car.getIdCar()!=null){
+            Optional<Car>e=CarRepository.getCar(car.getIdCar());
+            if(!e.isEmpty()){
+                if(car.getName()!=null){
+                    e.get().setName(car.getName());
+                }
+                if(car.getBrand()!=null){
+                    e.get().setBrand(car.getBrand());
+                }
+                if(car.getYear()!=null){
+                    e.get().setYear(car.getYear());
+                }
+                if(car.getDescription()!=null){
+                    e.get().setDescription(car.getDescription());
+                }
+                if(car.getGama()!=null){
+                    e.get().setGama(car.getGama());
+                }
+                carRepository.save(e.get());
+                return e.get();
+            }else {
+                return car;
+            }
+        }else{
+            return car;
+         }
+    }
+
+
+
     public boolean deleteCar (int id){
         Boolean d = getCar(id).map(car -> {
             carRepository.delete(car);
