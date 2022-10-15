@@ -18,14 +18,14 @@ public class CarService {
     }
     
     public Optional<Car> getCar(int id){
-        return CarRepository.getCar(id);
+        return carRepository.getCar(id);
     }
     
     public Car save (Car car){
         if (car.getIdCar() == null){
             return carRepository.save(car);
         } else {
-            Optional<Car> car1 = CarRepository.getCar(car.getIdCar());
+            Optional<Car> car1 = carRepository.getCar(car.getIdCar());
             if(car1.isEmpty()){
                 return carRepository.save(car);
             } else {
@@ -36,7 +36,7 @@ public class CarService {
 
     public Car update(Car car){
         if(car.getIdCar()!=null){
-            Optional<Car>e=CarRepository.getCar(car.getIdCar());
+            Optional<Car>e=carRepository.getCar(car.getIdCar());
             if(!e.isEmpty()){
                 if(car.getName()!=null){
                     e.get().setName(car.getName());

@@ -20,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Repository
 public class CarRepository {
     @Autowired
-    private static CarInterface extencionesCrud;
+    private  CarInterface extencionesCrud;
     
 
    
@@ -28,7 +28,7 @@ public class CarRepository {
         return (List<Car>) extencionesCrud.findAll();
     }
     
-    public static Optional<Car> getCar(int idCar){
+    public Optional<Car> getCar(int idCar){
         return extencionesCrud.findById(idCar);
     }
     
