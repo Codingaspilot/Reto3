@@ -34,6 +34,10 @@ public class GamaRepository {
     public Gama save(Gama gama){
         return extencionesCrud.save(gama);
     }
+
+    public void delete (Gama gama){
+        extencionesCrud.delete(gama);
+    }
     
     
     

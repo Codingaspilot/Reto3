@@ -36,4 +36,8 @@ public class CarRepository {
         return extencionesCrud.save(car);
     }
 
+    public void delete (Car car){
+        extencionesCrud.delete(car);
+    }
+
 }

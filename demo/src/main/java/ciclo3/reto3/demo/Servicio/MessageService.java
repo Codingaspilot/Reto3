@@ -33,6 +33,15 @@ public class MessageService {
             }
         }
     }
+
+    public boolean deleteMessage (int id){
+        Boolean d = getMessage(id).map(message -> {
+            messageRepository.delete(message);
+            return true;
+
+        }).orElse(false);
+        return d;
+}
 }
 
     
