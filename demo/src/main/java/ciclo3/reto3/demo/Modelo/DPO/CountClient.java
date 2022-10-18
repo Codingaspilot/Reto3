@@ -6,15 +6,12 @@ public class CountClient {
     private Long total;
     private Client client;
 
-    
-
-
-    
-
-    
-    public CountClient(Long long1, Client client2) {
+    public CountClient(Long total, Client client){
+        this.total = total;
+        this.client = client;
     }
 
+    
     public Long getTotal() {
         return total;
     }

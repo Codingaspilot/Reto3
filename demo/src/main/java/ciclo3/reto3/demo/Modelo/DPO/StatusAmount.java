@@ -4,10 +4,9 @@ public class StatusAmount {
     private int completed;
     private int cancelled;
    
-    
-
- 
-    public StatusAmount(int size, int size2) {
+    public StatusAmount(int completed,int cancelled){
+        this.completed = completed;
+        this.cancelled = cancelled;
     }
 
 
